@@ -1,50 +1,67 @@
 # TimeTagger – Home Assistant Integration
 
-Dieses Custom Component integriert die TimeTagger-API in Home Assistant und stellt mehrere Sensoren bereit:
+Dieses Custom Component integriert die [TimeTagger](https://timetagger.app)-API in Home Assistant
+und stellt mehrere Sensoren bereit:
 
-- Arbeitszeit heute
-- Arbeitszeit diese Woche
-- Arbeitszeit diesen Monat
-- Restzeit diese Woche
-- Monats-Saldo Arbeitszeit
+- `sensor.arbeitszeit_heute`
+- `sensor.arbeitszeit_diese_woche`
+- `sensor.arbeitszeit_diesen_monat`
+- `sensor.restzeit_diese_woche`
+- `sensor.monats_saldo_arbeitszeit`
 
-Alle Entitäten erscheinen sauber unter einem Gerät "TimeTagger".
+Alle Entitäten erscheinen unter einem Gerät **„TimeTagger“**.
 
 ## Installation über HACS
 
 1. HACS öffnen
-2. „Custom Repositories“
-3. Repo hinzufügen: 
-    https://github.com/ottes/ottes-ha-timetagger 
-    Kategorie: **Integration**
-4. Danach unter „Integrationen → TimeTagger“ konfigurieren:
-- API URL
-- API Token
-- Tags (z. B. `#work`)
-- Tägliche Sollstunden
+2. „Custom Repositories“ öffnen
+3. Dieses Repository hinzufügen, z. B.:
 
-## Beispiel: TimeTagger Instanz
+   ```text
+   https://github.com/Ottes42/hass-timetagger-integration
+Kategorie: Integration
 
-Der API-Endpoint sieht typischerweise so aus:
-https://dein-host/timetagger/api/v2/records
+Danach unter Einstellungen → Geräte & Dienste → Integration hinzufügen
+nach TimeTagger suchen und konfigurieren:
 
-Für Cloudinstanzen noch ungestestet!
+API URL (z. B. https://dein-host/timetagger/api/v2/records)
 
-## Features
+API Token
 
-- DataUpdateCoordinator für effiziente API-Abfragen
-- Gerätestruktur für alle Sensoren
-- UI-Konfiguration per Config Flow
-- Aggregationen für heute, Woche, Monat
+Work-Tags (z. B. #work)
 
-## ToDo / Roadmap
+Tägliche Sollstunden (Standard: 8)
 
-- Deepwork-Sensoren
-- Homeoffice/Office-Erkennung
-- Krankheit/Urlaub getrennt auswerten
-- ApexCharts-Blueprints
+Verwendung
+Nach der Einrichtung stehen im TimeTagger-Gerät u. a. folgende Sensoren zur Verfügung:
 
-## Support
+Arbeitszeit heute – Summe aller TimeTagger-Records heute (in Stunden)
 
-Issues willkommen:  
-https://github.com/ottes/ottes-ha-timetagger/issues
+Arbeitszeit diese Woche – Summe aller Records seit Wochenbeginn (Montag)
+
+Arbeitszeit diesen Monat – Summe aller Records seit Monatsbeginn
+
+Restzeit diese Woche – (Sollstunden bis heute) minus (gearbeitete Stunden)
+
+Monats-Saldo Arbeitszeit – Über-/Minusstunden diesen Monat
+
+Diese Sensoren eignen sich ideal für:
+
+ApexCharts (Wochenbalken + kumulierte Überstundenlinie)
+
+Automationen („Feierabend, wenn Restzeit diese Woche <= 0“)
+
+Dashboards für Arbeitszeit-/Überstundenkontrolle
+
+Roadmap
+Weitere Sensoren (Deep Work, Homeoffice/Office per Tagging)
+
+Unterstützung für mehrere Profile / Tag-Sets
+
+Blueprint-Beispiele für ApexCharts
+
+Support
+Issues und Feature Requests gern über GitHub-Issues.
+
+sql
+Code kopieren
