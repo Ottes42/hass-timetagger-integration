@@ -5,9 +5,9 @@
         "title": "Connect TimeTagger",
         "description": "Configure connection to your TimeTagger instance.",
         "data": {
-          "api_url": "API URL (e.g. https://host/timetagger/api/v2/records)",
+          "api_url": "API URL (e.g. https://host/timetagger/)",
           "token": "API token",
-          "work_tags": "Work tags (e.g. #work,#job)",
+          "work_tags": "Work tags (e.g. #work,#homeoffice)",
           "daily_target": "Daily target hours"
         }
       }

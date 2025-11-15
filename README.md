@@ -24,7 +24,7 @@ Kategorie: Integration
 Danach unter Einstellungen → Geräte & Dienste → Integration hinzufügen
 nach TimeTagger suchen und konfigurieren:
 
-API URL (z. B. https://dein-host/timetagger/api/v2/records)
+API URL (z. B. https://dein-host/timetagger/)
 
 API Token
 
