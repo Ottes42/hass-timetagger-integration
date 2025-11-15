@@ -8,5 +8,5 @@ CONF_WORK_TAGS = "work_tags"
 CONF_DAILY_TARGET = "daily_target"
 
 DEFAULT_DAILY_TARGET = 8.0
-DEFAULT_WORK_TAGS = "#work"
-DEFAULT_API_URL = "https://timetagger-host/timetagger/api/v2/records"
+DEFAULT_WORK_TAGS = "#work,#homeoffice"
+DEFAULT_API_URL = "https://timetagger-host/timetagger/"
